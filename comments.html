@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>评论区页面</title>
+    <link rel="stylesheet" href="dongman.css">
+    <style>
+        #comments {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .comment {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+<div class="qb">
+    <ul>
+        <li><a href="index.html">网站首页</a></li>
+        <li><a href="plot.html">剧情简介</a></li>
+        <li><a href="dongman3.html">角色介绍</a></li>
+        <li><a href="dongman4.html">设定解说</a></li>
+        <li><a href="music.html">动画音乐</a></li>
+        <li><a href="comments.html">用户评论</a></li>
+    </ul>
+</div>
+<div id="comments">
+    <h2>评论区</h2>
+
+    <!-- 评论列表 -->
+    <div id="commentList">
+        <div class="comment"><strong>故渊</strong><br> 世间若尽是不如意事,越是执着,便越是苦,
+            不如安下心来,看该看的风景,做好该做之
+            事 -- 李星云</div>
+        <div class="comment"><strong>李帅帅</strong><br> 各位不良人下一季再会!我是迟到的天导星李
+            帅帅</div>
+        <div class="comment"><strong>秋北</strong><br> 天下尽做饵</div>
+        <div class="comment"><strong>三圣涅快来包裹我</strong><br> 完结了,心里空落落的</div>
+        <div class="comment"><strong>在乎</strong><br> 善良不是软弱更不是退让,而是从不主动伤害
+            别人,不会纠缠不休,懂得适可而止。为人处
+            世以诚相待,不欺骗,不撒谎。以诚恳善良的
+            心去面对所有的人</div>
+        <div class="comment"><strong>易默可</strong><br> 以知,张子凡是在乎故人的,他在保岐王
+            第二,张子凡留在漠北还有目的,他的目标不
+            是漠北与岐国和谈,或者说不是所有目标,这
+            点从他不跟倾国倾城走,提前联系石敬瑭与各
+            位王候可以看出来,联系这些人加上他自己在
+            漠北的所作所为,应是最终目标是李 ...</div>
+        <div class="comment"><strong>飞羽千翎</strong><br> 看了这么多年,唯一看到有结局的,结局又让
+            我回味无穷的,想有下一季又不想有下一季的
+            动漫,很棒。再见!不良人!</div>
+        <div class="comment"><strong>Worry</strong><br> 这最后一集太tm给力了,这时长,一个字爽,
+            期待下一季</div>
+        <div class="comment"><strong>" J osie.</strong><br> 隔壁的斗破你看看人家,再看看你们萧炎和女
+            王 ... 多学学吧</div>
+        <div class="comment"><strong>风止意难平</strong><br> 这才叫不糊弄观众,某些动漫别老整一人代替
+            万人的可笑场面!</div>
+    </div>
+
+    <!-- 评论表单 -->
+    <form id="commentForm">
+        <label for="comment">评论:</label>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
+        <br>
+        <button type="button" onclick="addComment()">发表评论</button>
+    </form>
+</div>
+
+<script>
+    function addComment() {
+        var name = "你";
+        var comment = document.getElementById("comment").value;
+
+        if (comment) {
+            var commentList = document.getElementById("commentList");
+
+            var newComment = document.createElement("div");
+            newComment.classList.add("comment");
+            newComment.innerHTML = "<strong>" + name + "</strong> <br>" + comment;
+
+            // 插入新评论到评论列表的顶部
+            if (commentList.firstChild) {
+                commentList.insertBefore(newComment, commentList.firstChild);
+            } else {
+                commentList.appendChild(newComment);
+            }
+
+            // 清空表单
+            document.getElementById("commentForm").reset();
+        } else {
+            alert("请填写评论内容。");
+        }
+    }
+</script>
+
+</body>
+</html>

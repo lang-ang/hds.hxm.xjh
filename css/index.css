@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+main {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #dfd6d6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: 50%;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+h1 {
+    color: #333;
+    font-size: 7em;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.dynamic-button {
+display: inline-block;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+border: 2px solid #333;
+color: #333;
+border-radius: 5px;
+transition: background-color 0.3s, color 0.3s;
+}
+
+/* 悬停效果 */
+.dynamic-button:hover {
+background-color: #333;
+color: #fff;
+}
+
+/* 按下效果 */
+.dynamic-button:active {
+transform: scale(0.95);
+}
+
+/* 禁用效果 */
+.dynamic-button:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
